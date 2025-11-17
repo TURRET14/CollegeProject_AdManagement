@@ -1,0 +1,56 @@
+﻿<Page x:Class="Emelyanenko_AdManagement.MainPageForAuthorized"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Emelyanenko_AdManagement"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Объявления"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary1.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Объявления"></TextBlock>
+        <Button Name="Button_Add" Grid.Row="1" Click="Button_Add_Click">Добавить объявление</Button>
+        <DataGrid Name="DataGrid_Main" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Пользователь" Binding="{Binding Users.User_Login}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Ad_Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Ad_Description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Ad_Post_Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город" Binding="{Binding Cities.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Categories.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Ad_Types.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Ad_Statuses.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Button_Edit" Click="Button_Edit_Click">Редактировать</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Button_Delete" Click="Button_Delete_Click">Удалить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

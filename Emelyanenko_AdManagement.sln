@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emelyanenko_AdManagement", "Emelyanenko_AdManagement\Emelyanenko_AdManagement.csproj", "{349780AF-9814-41B8-9A03-40B2C03EE945}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{349780AF-9814-41B8-9A03-40B2C03EE945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349780AF-9814-41B8-9A03-40B2C03EE945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349780AF-9814-41B8-9A03-40B2C03EE945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349780AF-9814-41B8-9A03-40B2C03EE945}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43E663AC-B191-4A63-A69F-F10C1B9AA38F}
+	EndGlobalSection
+EndGlobal

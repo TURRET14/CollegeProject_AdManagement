@@ -15,7 +15,7 @@ namespace Emelyanenko_AdManagement
     
     public partial class Emelyanenko_AdManagementEntities : DbContext
     {
-        public Emelyanenko_AdManagementEntities()
+        private Emelyanenko_AdManagementEntities()
             : base("name=Emelyanenko_AdManagementEntities")
         {
         }
@@ -30,7 +30,7 @@ namespace Emelyanenko_AdManagement
             }
             return instance;
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

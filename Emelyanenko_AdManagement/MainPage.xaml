@@ -43,6 +43,24 @@
                 <DataGridTextColumn Header="Тип" Binding="{Binding Ad_Types.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Binding="{Binding Ad_Statuses.Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Стоимость" Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Фотография">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Stretch="Uniform" Width="75" RenderOptions.BitmapScalingMode="HighQuality">
+                                <Image.Source>
+                                    <Binding Path="PhotoPath">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Logo.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                        <Binding.FallbackValue>
+                                            <ImageSource>/Logo.png</ImageSource>
+                                        </Binding.FallbackValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

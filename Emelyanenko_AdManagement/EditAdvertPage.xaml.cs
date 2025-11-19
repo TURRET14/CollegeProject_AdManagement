@@ -40,8 +40,9 @@ namespace Emelyanenko_AdManagement
             TextBox_City.Text = selected.Cities.Name;
             TextBox_Category.Text = selected.Categories.Name;
             TextBox_Type.Text = selected.Ad_Types.Name;
-            TextBox_Status.Text = selected.Ad_Statuses.Name;
+            ComboBox_Status.SelectedItem = selected.Ad_Statuses.Name;
             TextBox_Price.Text = selected.Price.ToString();
+            TextBox_PhotoPath.Text = selected.PhotoPath;
         }
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
@@ -75,13 +76,17 @@ namespace Emelyanenko_AdManagement
             {
                 errors.AppendLine("Заполните поле (Тип)!");
             }
-            if (String.IsNullOrEmpty(TextBox_Status.Text))
+            if (ComboBox_Status.SelectedItem == null)
             {
                 errors.AppendLine("Заполните поле (Статус)!");
             }
             if (String.IsNullOrEmpty(TextBox_Price.Text))
             {
                 errors.AppendLine("Заполните поле (Цена)!");
+            }
+            if (String.IsNullOrEmpty(TextBox_PhotoPath.Text))
+            {
+                TextBox_PhotoPath.Text = null;
             }
             else
             {
@@ -135,10 +140,10 @@ namespace Emelyanenko_AdManagement
             }
             selected.Ad_Types = type;
 
-            Ad_Statuses status = Emelyanenko_AdManagementEntities.getInstance().Ad_Statuses.FirstOrDefault(entry => entry.Name == TextBox_Status.Text);
+            Ad_Statuses status = Emelyanenko_AdManagementEntities.getInstance().Ad_Statuses.FirstOrDefault(entry => entry.Name == ComboBox_Status.SelectedItem.ToString());
             if (status == null)
             {
-                status = new Ad_Statuses() { Name = TextBox_Status.Text };
+                status = new Ad_Statuses() { Name = ComboBox_Status.SelectedItem.ToString() };
             }
             selected.Ad_Statuses = status;
 
@@ -146,7 +151,8 @@ namespace Emelyanenko_AdManagement
             selected.Ad_Description = TextBox_Description.Text;
             selected.Ad_Post_Date = DatePicker_Date.SelectedDate;
             selected.Price = Convert.ToInt32(TextBox_Price.Text);
-
+            selected.Price = Convert.ToInt32(TextBox_Price.Text);
+            selected.PhotoPath = TextBox_PhotoPath.Text;
             if (editing == false)
             {
                 try

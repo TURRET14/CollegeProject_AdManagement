@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Emelyanenko_AdManagement"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Редактирование объявления">
@@ -16,6 +17,7 @@
     </Page.Resources>
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="500">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -56,11 +58,17 @@
         <TextBox Name="TextBox_Type" Grid.Row="7" Grid.Column="1"></TextBox>
 
         <TextBlock Grid.Row="8" Grid.Column="0" Text="Статус"></TextBlock>
-        <TextBox Name="TextBox_Status" Grid.Row="8" Grid.Column="1"></TextBox>
+        <ComboBox Name="ComboBox_Status" Grid.Row="8" Grid.Column="1">
+            <system:String>Активно</system:String>
+            <system:String>Завершено</system:String>
+        </ComboBox>
 
         <TextBlock Grid.Row="9" Grid.Column="0" Text="Цена"></TextBlock>
         <TextBox Name="TextBox_Price" Grid.Row="9" Grid.Column="1"></TextBox>
 
-        <Button Name="Button_Save" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Save_Click">Сохранить</Button>
+        <TextBlock Grid.Row="10" Grid.Column="0" Text="Путь к фотографии"></TextBlock>
+        <TextBox Name="TextBox_PhotoPath" Grid.Row="10" Grid.Column="1"></TextBox>
+
+        <Button Name="Button_Save" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Save_Click">Сохранить</Button>
     </Grid>
 </Page>

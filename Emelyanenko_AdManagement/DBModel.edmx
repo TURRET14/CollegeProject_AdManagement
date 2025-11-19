@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Emelyanenko_AdManagementModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Emelyanenko_AdManagementModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ad_Statuses">
           <Key>
             <PropertyRef Name="ID" />
@@ -33,6 +33,7 @@
           <Property Name="Ad_TypeID" Type="int" />
           <Property Name="Ad_StatusID" Type="int" />
           <Property Name="Price" Type="int" />
+          <Property Name="PhotoPath" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Categories">
           <Key>
@@ -144,8 +145,7 @@
             <End Role="Adverts" EntitySet="Adverts" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Emelyanenko_AdManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -184,6 +184,7 @@
           <NavigationProperty Name="Categories" Relationship="Self.FK__Adverts__Categor__571DF1D5" FromRole="Adverts" ToRole="Categories" />
           <NavigationProperty Name="Cities" Relationship="Self.FK__Adverts__CityID__5629CD9C" FromRole="Adverts" ToRole="Cities" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Adverts__UserID__5535A963" FromRole="Adverts" ToRole="Users" />
+          <Property Name="PhotoPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Categories">
           <Key>
@@ -323,6 +324,7 @@
           <EntitySetMapping Name="Adverts">
             <EntityTypeMapping TypeName="Emelyanenko_AdManagementModel.Adverts">
               <MappingFragment StoreEntitySet="Adverts">
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Ad_Title" ColumnName="Ad_Title" />

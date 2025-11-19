@@ -24,6 +24,7 @@ namespace Emelyanenko_AdManagement
         public Nullable<int> Ad_TypeID { get; set; }
         public Nullable<int> Ad_StatusID { get; set; }
         public Nullable<int> Price { get; set; }
+        public string PhotoPath { get; set; }
     
         public virtual Ad_Statuses Ad_Statuses { get; set; }
         public virtual Ad_Types Ad_Types { get; set; }

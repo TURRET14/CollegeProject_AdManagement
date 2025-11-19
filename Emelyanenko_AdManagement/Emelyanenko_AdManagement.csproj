@@ -197,6 +197,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Logo.png" />
     <Resource Include="Иконка.ico" />
   </ItemGroup>
   <ItemGroup>

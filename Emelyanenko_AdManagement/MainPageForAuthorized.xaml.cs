@@ -23,6 +23,11 @@ namespace Emelyanenko_AdManagement
         public MainPageForAuthorized()
         {
             InitializeComponent();
+            ComboBox_User.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Users.ToList();
+            ComboBox_City.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Cities.ToList();
+            ComboBox_Category.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Categories.ToList();
+            ComboBox_Type.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Ad_Types.ToList();
+            ComboBox_Status.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Ad_Statuses.ToList();
         }
 
         private void Button_Edit_Click(object sender, RoutedEventArgs e)
@@ -57,6 +62,56 @@ namespace Emelyanenko_AdManagement
         private void Button_Add_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EditAdvertPage());
+        }
+
+        private void Button_Filter_Click(object sender, RoutedEventArgs e)
+        {
+            List<Adverts> list = Emelyanenko_AdManagementEntities.getInstance().Adverts.ToList();
+            if (ComboBox_User.SelectedItem != null)
+            {
+                list = list.Where(entry => entry.Users == ComboBox_User.SelectedItem).ToList();
+            }
+            if (!String.IsNullOrEmpty(TextBox_Title.Text))
+            {
+                list = list.Where(entry => entry.Ad_Title.Contains(TextBox_Title.Text)).ToList();
+            }
+            if (!String.IsNullOrEmpty(TextBox_Description.Text))
+            {
+                list = list.Where(entry => entry.Ad_Description.Contains(TextBox_Description.Text)).ToList();
+            }
+            if (ComboBox_City.SelectedItem != null)
+            {
+                list = list.Where(entry => entry.Cities == ComboBox_City.SelectedItem).ToList();
+            }
+            if (ComboBox_Category.SelectedItem != null)
+            {
+                list = list.Where(entry => entry.Categories == ComboBox_Category.SelectedItem).ToList();
+            }
+            if (ComboBox_Type.SelectedItem != null)
+            {
+                list = list.Where(entry => entry.Ad_Types == ComboBox_Type.SelectedItem).ToList();
+            }
+            if (ComboBox_Status.SelectedItem != null)
+            {
+                list = list.Where(entry => entry.Ad_Statuses == ComboBox_Status.SelectedItem).ToList();
+            }
+            DataGrid_Main.ItemsSource = list;
+        }
+
+        private void Button_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBox_User.SelectedItem = null;
+            ComboBox_City.SelectedItem = null;
+            ComboBox_Category.SelectedItem = null;
+            ComboBox_Type.SelectedItem = null;
+            ComboBox_Status.SelectedItem = null;
+            TextBox_Title.Text = null;
+            TextBox_Description.Text = null;
+        }
+
+        private void Button_Finished_Ads_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FinishedAdvertsPage());
         }
     }
 }

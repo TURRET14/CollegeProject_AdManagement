@@ -26,9 +26,17 @@
         <Setter Property="Foreground" Value="#37474F"></Setter>
     </Style>
 
-    <Style TargetType="DatePicker">
+    <Style TargetType="ComboBox">
         <Setter Property="Height" Value="38"></Setter>
         <Setter Property="Padding" Value="10"></Setter>
+        <Setter Property="Margin" Value="20"></Setter>
+        <Setter Property="FontFamily" Value="Tw Cen MT"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="Foreground" Value="#37474F"></Setter>
+    </Style>
+
+    <Style TargetType="DatePicker">
+        <Setter Property="Height" Value="38"></Setter>
         <Setter Property="Margin" Value="20"></Setter>
         <Setter Property="FontFamily" Value="Tw Cen MT"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>

@@ -15,53 +15,101 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
+    <ScrollViewer>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="Button_Login" Grid.Column="0" Click="Button_Login_Click">Войти</Button>
+                <Button Name="Button_Register" Grid.Column="1" Click="Button_Register_Click">Зарегистрироваться</Button>
+            </Grid>
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button Name="Button_Login" Grid.Column="0" Click="Button_Login_Click">Войти</Button>
-            <Button Name="Button_Register" Grid.Column="1" Click="Button_Register_Click">Зарегистрироваться</Button>
+            <Button Name="Button_Finished_Ads" Grid.Row="1" Click="Button_Finished_Ads_Click">Завершенные объявления</Button>
+            
+            <TextBlock Grid.Row="2" Text="Объявления (Гость)"></TextBlock>
+
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Пользователь"></TextBlock>
+                <ComboBox Name="ComboBox_User" Grid.Row="0" Grid.Column="1" DisplayMemberPath="User_Login"></ComboBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Заголовок"></TextBlock>
+                <TextBox Name="TextBox_Title" Grid.Row="1" Grid.Column="1"></TextBox>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Описание"></TextBlock>
+                <TextBox Name="TextBox_Description" Grid.Row="2" Grid.Column="1"></TextBox>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Город"></TextBlock>
+                <ComboBox Name="ComboBox_City" Grid.Row="3" Grid.Column="1" DisplayMemberPath="Name"></ComboBox>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Категория"></TextBlock>
+                <ComboBox Name="ComboBox_Category" Grid.Row="4" Grid.Column="1" DisplayMemberPath="Name"></ComboBox>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Тип"></TextBlock>
+                <ComboBox Name="ComboBox_Type" Grid.Row="5" Grid.Column="1" DisplayMemberPath="Name"></ComboBox>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Статус"></TextBlock>
+                <ComboBox Name="ComboBox_Status" Grid.Row="6" Grid.Column="1" DisplayMemberPath="Name"></ComboBox>
+
+                <Button Name="Button_Filter" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Filter_Click">Поиск</Button>
+
+                <Button Name="Button_Clear" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Clear_Click">Очистить фильтры</Button>
+            </Grid>
+
+            <DataGrid Name="DataGrid_Main" Grid.Row="4" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Пользователь" Binding="{Binding Users.User_Login}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Заголовок" Binding="{Binding Ad_Title}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Ad_Description}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Ad_Post_Date}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Город" Binding="{Binding Cities.Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория" Binding="{Binding Categories.Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Ad_Types.Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Ad_Statuses.Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Стоимость" Binding="{Binding Price}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Фотография">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Stretch="Uniform" Width="75" RenderOptions.BitmapScalingMode="HighQuality">
+                                    <Image.Source>
+                                        <Binding Path="PhotoPath">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>/Logo.png</ImageSource>
+                                            </Binding.TargetNullValue>
+                                            <Binding.FallbackValue>
+                                                <ImageSource>/Logo.png</ImageSource>
+                                            </Binding.FallbackValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
-
-        <TextBlock Grid.Row="1" Text="Объявления (Гость)"></TextBlock>
-        <DataGrid Name="DataGrid_Main" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding Users.User_Login}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Заголовок" Binding="{Binding Ad_Title}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Описание" Binding="{Binding Ad_Description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата" Binding="{Binding Ad_Post_Date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Город" Binding="{Binding Cities.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Категория" Binding="{Binding Categories.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Тип" Binding="{Binding Ad_Types.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Статус" Binding="{Binding Ad_Statuses.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Стоимость" Binding="{Binding Price}"></DataGridTextColumn>
-                <DataGridTemplateColumn Header="Фотография">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Stretch="Uniform" Width="75" RenderOptions.BitmapScalingMode="HighQuality">
-                                <Image.Source>
-                                    <Binding Path="PhotoPath">
-                                        <Binding.TargetNullValue>
-                                            <ImageSource>/Logo.png</ImageSource>
-                                        </Binding.TargetNullValue>
-                                        <Binding.FallbackValue>
-                                            <ImageSource>/Logo.png</ImageSource>
-                                        </Binding.FallbackValue>
-                                    </Binding>
-                                </Image.Source>
-                            </Image>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    </ScrollViewer>
 </Page>

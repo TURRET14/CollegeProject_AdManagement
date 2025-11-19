@@ -11,7 +11,8 @@ namespace Emelyanenko_AdManagement
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,5 +27,13 @@ namespace Emelyanenko_AdManagement
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adverts> Adverts { get; set; }
+
+        public Nullable<int> Finished_Ad_Sum
+        {
+            get
+            {
+                return Emelyanenko_AdManagementEntities.getInstance().Adverts.Where(entry => entry.UserID == this.ID && entry.Ad_Statuses.Name == "Завершено").Sum(entry => entry.Price);
+            }
+        } 
     }
 }

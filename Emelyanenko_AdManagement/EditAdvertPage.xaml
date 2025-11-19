@@ -15,60 +15,62 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="500">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Редактирование объявления"></TextBlock>
+    <ScrollViewer>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Редактирование объявления"></TextBlock>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Пользователь"></TextBlock>
-        <TextBox Name="TextBox_User" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Пользователь"></TextBlock>
+            <TextBox Name="TextBox_User" Grid.Row="1" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Заголовок"></TextBlock>
-        <TextBox Name="TextBox_Title" Grid.Row="2" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Заголовок"></TextBlock>
+            <TextBox Name="TextBox_Title" Grid.Row="2" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Описание"></TextBlock>
-        <TextBox Name="TextBox_Description" Grid.Row="3" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Описание"></TextBlock>
+            <TextBox Name="TextBox_Description" Grid.Row="3" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата"></TextBlock>
-        <DatePicker Name="DatePicker_Date" Grid.Row="4" Grid.Column="1"></DatePicker>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата"></TextBlock>
+            <DatePicker Name="DatePicker_Date" Grid.Row="4" Grid.Column="1"></DatePicker>
 
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Город"></TextBlock>
-        <TextBox Name="TextBox_City" Grid.Row="5" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Город"></TextBlock>
+            <TextBox Name="TextBox_City" Grid.Row="5" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="Категория"></TextBlock>
-        <TextBox Name="TextBox_Category" Grid.Row="6" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Категория"></TextBlock>
+            <TextBox Name="TextBox_Category" Grid.Row="6" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="7" Grid.Column="0" Text="Тип"></TextBlock>
-        <TextBox Name="TextBox_Type" Grid.Row="7" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Тип"></TextBlock>
+            <TextBox Name="TextBox_Type" Grid.Row="7" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="8" Grid.Column="0" Text="Статус"></TextBlock>
-        <ComboBox Name="ComboBox_Status" Grid.Row="8" Grid.Column="1">
-            <system:String>Активно</system:String>
-            <system:String>Завершено</system:String>
-        </ComboBox>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Статус"></TextBlock>
+            <ComboBox Name="ComboBox_Status" Grid.Row="8" Grid.Column="1">
+                <system:String>Активно</system:String>
+                <system:String>Завершено</system:String>
+            </ComboBox>
 
-        <TextBlock Grid.Row="9" Grid.Column="0" Text="Цена"></TextBlock>
-        <TextBox Name="TextBox_Price" Grid.Row="9" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Цена"></TextBlock>
+            <TextBox Name="TextBox_Price" Grid.Row="9" Grid.Column="1"></TextBox>
 
-        <TextBlock Grid.Row="10" Grid.Column="0" Text="Путь к фотографии"></TextBlock>
-        <TextBox Name="TextBox_PhotoPath" Grid.Row="10" Grid.Column="1"></TextBox>
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Путь к фотографии"></TextBlock>
+            <TextBox Name="TextBox_PhotoPath" Grid.Row="10" Grid.Column="1"></TextBox>
 
-        <Button Name="Button_Save" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Save_Click">Сохранить</Button>
-    </Grid>
+            <Button Name="Button_Save" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Click="Button_Save_Click">Сохранить</Button>
+        </Grid>
+    </ScrollViewer>
 </Page>

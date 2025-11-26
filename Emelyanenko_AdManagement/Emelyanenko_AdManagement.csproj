@@ -181,6 +181,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Ads_Data.csv" />
     <None Include="DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </None>
@@ -194,6 +195,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabaseExported.sql" />
     <Content Include="DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DBModel.Context.cs</LastGenOutput>
@@ -204,6 +206,8 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Content Include="SQLInit.sql" />
+    <Content Include="SQLInsertData.sql" />
     <Resource Include="Logo.png" />
     <Resource Include="Иконка.ico" />
   </ItemGroup>

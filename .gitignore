@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Emelyanenko_AdManagement/Ads_Data.xlsx
+/Emelyanenko_AdManagement/ads_data.xlsx

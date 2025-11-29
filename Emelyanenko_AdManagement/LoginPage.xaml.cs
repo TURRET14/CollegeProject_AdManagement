@@ -50,7 +50,7 @@ namespace Emelyanenko_AdManagement
                 MessageBox.Show("Неверный логин или пароль!", "Ошибка");
                 return;
             }
-
+            // Переход на страницу объявлений для авторизованных пользователей
             NavigationService.Navigate(new MainPageForAuthorized());
         }
     }

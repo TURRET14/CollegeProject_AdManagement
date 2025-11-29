@@ -182,6 +182,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ads_data.xlsx" />
     <None Include="DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </None>
@@ -205,6 +206,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Content Include="SQLInit.sql" />
     <Resource Include="Logo.png" />
     <Resource Include="Иконка.ico" />
   </ItemGroup>

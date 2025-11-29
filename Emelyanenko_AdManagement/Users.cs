@@ -27,7 +27,7 @@ namespace Emelyanenko_AdManagement
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adverts> Adverts { get; set; }
-
+        // Свойство для получения суммы выручки со всех завершенных объявлений данного пользователя
         public Nullable<int> Finished_Ad_Sum
         {
             get

@@ -23,6 +23,7 @@ namespace Emelyanenko_AdManagement
         public FinishedAdvertsPage()
         {
             InitializeComponent();
+            // Отображаем только завершенные объявления
             DataGrid_Main.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Adverts.Where(entry => entry.Ad_Statuses.Name == "Завершено").ToList();
         }
     }

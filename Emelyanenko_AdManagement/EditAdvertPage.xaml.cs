@@ -22,6 +22,7 @@ namespace Emelyanenko_AdManagement
     {
         private bool editing = false;
         private Emelyanenko_AdManagement.Adverts selected;
+        // У данного класса два конструктора - один для создания объявления (Без аргументов), другой для его редактирования, где в качестве аргумента принимается редактируемое объявление
         public EditAdvertPage()
         {
             InitializeComponent();

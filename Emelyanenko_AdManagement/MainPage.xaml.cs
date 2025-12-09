@@ -23,11 +23,11 @@ namespace Emelyanenko_AdManagement
         public MainPage()
         {
             InitializeComponent();
-            ComboBox_User.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Users.ToList();
-            ComboBox_City.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Cities.ToList();
-            ComboBox_Category.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Categories.ToList();
-            ComboBox_Type.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Ad_Types.ToList();
-            ComboBox_Status.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Ad_Statuses.ToList();
+            ComboBox_User.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Users.ToList();
+            ComboBox_City.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Cities.ToList();
+            ComboBox_Category.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Categories.ToList();
+            ComboBox_Type.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Ad_Types.ToList();
+            ComboBox_Status.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Ad_Statuses.ToList();
         }
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
@@ -42,12 +42,12 @@ namespace Emelyanenko_AdManagement
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            DataGrid_Main.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Adverts.ToList();
+            DataGrid_Main.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Adverts.ToList();
         }
 
         private void Button_Filter_Click(object sender, RoutedEventArgs e)
         {
-            List<Adverts> list = Emelyanenko_AdManagementEntities.getInstance().Adverts.ToList();
+            List<Adverts> list = Emelyanenko_AdManagementEntities.GetInstance().Adverts.ToList();
             if (ComboBox_User.SelectedItem != null)
             {
                 list = list.Where(entry => entry.Users == ComboBox_User.SelectedItem).ToList();

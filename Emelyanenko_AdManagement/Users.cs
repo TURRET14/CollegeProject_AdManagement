@@ -32,7 +32,7 @@ namespace Emelyanenko_AdManagement
         {
             get
             {
-                return Emelyanenko_AdManagementEntities.getInstance().Adverts.Where(entry => entry.UserID == this.ID && entry.Ad_Statuses.Name == "Завершено").Sum(entry => entry.Price);
+                return Emelyanenko_AdManagementEntities.GetInstance().Adverts.Where(entry => entry.UserID == this.ID && entry.Ad_Statuses.Name == "Завершено").Sum(entry => entry.Price);
             }
         } 
     }

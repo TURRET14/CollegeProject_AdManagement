@@ -24,7 +24,7 @@ namespace Emelyanenko_AdManagement
         {
             InitializeComponent();
             // Отображаем только завершенные объявления
-            DataGrid_Main.ItemsSource = Emelyanenko_AdManagementEntities.getInstance().Adverts.Where(entry => entry.Ad_Statuses.Name == "Завершено").ToList();
+            DataGrid_Main.ItemsSource = Emelyanenko_AdManagementEntities.GetInstance().Adverts.Where(entry => entry.Ad_Statuses.Name == "Завершено").ToList();
         }
     }
 }

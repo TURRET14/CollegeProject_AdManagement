@@ -22,7 +22,7 @@ namespace Emelyanenko_AdManagement
 
         static private Emelyanenko_AdManagementEntities instance;
 
-        static public Emelyanenko_AdManagementEntities getInstance()
+        static public Emelyanenko_AdManagementEntities GetInstance()
         {
             if (instance == null)
             {

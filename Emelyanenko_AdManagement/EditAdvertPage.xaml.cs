@@ -112,7 +112,7 @@ namespace Emelyanenko_AdManagement
                 return;
             }
 
-            Users user = Emelyanenko_AdManagementEntities.getInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_User.Text);
+            Users user = Emelyanenko_AdManagementEntities.GetInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_User.Text);
             if (user == null)
             {
                 MessageBox.Show("Такого пользователя нет!", "Ошибка!");
@@ -120,28 +120,28 @@ namespace Emelyanenko_AdManagement
             }
             selected.Users = user;
 
-            Cities city = Emelyanenko_AdManagementEntities.getInstance().Cities.FirstOrDefault(entry => entry.Name == TextBox_City.Text);
+            Cities city = Emelyanenko_AdManagementEntities.GetInstance().Cities.FirstOrDefault(entry => entry.Name == TextBox_City.Text);
             if (city == null)
             {
                 city = new Cities() { Name = TextBox_City.Text };
             }
             selected.Cities = city;
 
-            Categories category = Emelyanenko_AdManagementEntities.getInstance().Categories.FirstOrDefault(entry => entry.Name == TextBox_Category.Text);
+            Categories category = Emelyanenko_AdManagementEntities.GetInstance().Categories.FirstOrDefault(entry => entry.Name == TextBox_Category.Text);
             if (category == null)
             {
                 category = new Categories() { Name = TextBox_Category.Text };
             }
             selected.Categories = category;
 
-            Ad_Types type = Emelyanenko_AdManagementEntities.getInstance().Ad_Types.FirstOrDefault(entry => entry.Name == TextBox_Type.Text);
+            Ad_Types type = Emelyanenko_AdManagementEntities.GetInstance().Ad_Types.FirstOrDefault(entry => entry.Name == TextBox_Type.Text);
             if (type == null)
             {
                 type = new Ad_Types() { Name = TextBox_Type.Text };
             }
             selected.Ad_Types = type;
 
-            Ad_Statuses status = Emelyanenko_AdManagementEntities.getInstance().Ad_Statuses.FirstOrDefault(entry => entry.Name == ComboBox_Status.SelectedItem.ToString());
+            Ad_Statuses status = Emelyanenko_AdManagementEntities.GetInstance().Ad_Statuses.FirstOrDefault(entry => entry.Name == ComboBox_Status.SelectedItem.ToString());
             if (status == null)
             {
                 status = new Ad_Statuses() { Name = ComboBox_Status.SelectedItem.ToString() };
@@ -158,7 +158,7 @@ namespace Emelyanenko_AdManagement
             {
                 try
                 {
-                    Emelyanenko_AdManagementEntities.getInstance().Adverts.Add(selected);
+                    Emelyanenko_AdManagementEntities.GetInstance().Adverts.Add(selected);
                 }
                 catch (Exception ex)
                 {
@@ -166,7 +166,7 @@ namespace Emelyanenko_AdManagement
                     return;
                 }
             }
-            Emelyanenko_AdManagementEntities.getInstance().SaveChanges();
+            Emelyanenko_AdManagementEntities.GetInstance().SaveChanges();
 
             NavigationService.GoBack();
         }

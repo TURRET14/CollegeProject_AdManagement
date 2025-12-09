@@ -51,7 +51,7 @@ namespace Emelyanenko_AdManagement
                 return;
             }
 
-            if (Emelyanenko_AdManagementEntities.getInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_Login.Text) != null)
+            if (Emelyanenko_AdManagementEntities.GetInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_Login.Text) != null)
             {
                 MessageBox.Show("Этот логин уже занят!", "Ошибка");
                 return;
@@ -60,8 +60,8 @@ namespace Emelyanenko_AdManagement
             Users user = new Users() { User_Login = TextBox_Login.Text, User_Password = PasswordBox_Password.Password };
             try
             {
-                Emelyanenko_AdManagementEntities.getInstance().Users.Add(user);
-                Emelyanenko_AdManagementEntities.getInstance().SaveChanges();
+                Emelyanenko_AdManagementEntities.GetInstance().Users.Add(user);
+                Emelyanenko_AdManagementEntities.GetInstance().SaveChanges();
             }
             catch (Exception ex)
             {

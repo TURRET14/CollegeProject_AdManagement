@@ -6,6 +6,7 @@
         <Setter Property="FontFamily" Value="Tw Cen MT"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
         <Setter Property="Background" Value="#FF9C1A"></Setter>
+        <Setter Property="Foreground" Value="#37474F"></Setter>
     </Style>
     
     <Style TargetType="TextBox">
@@ -56,5 +57,11 @@
         <Setter Property="Foreground" Value="#78909C"></Setter>
         <Setter Property="Margin" Value="20"></Setter>
         <Setter Property="Padding" Value="10"></Setter>
+    </Style>
+
+    <Style TargetType="Image">
+        <Setter Property="Stretch" Value="Uniform"></Setter>
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"></Setter>
+        <Setter Property="Margin" Value="20"></Setter>
     </Style>
 </ResourceDictionary>

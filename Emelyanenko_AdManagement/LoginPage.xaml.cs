@@ -43,7 +43,7 @@ namespace Emelyanenko_AdManagement
                 return;
             }
 
-            Users user = Emelyanenko_AdManagementEntities.getInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_Login.Text && entry.User_Password == PasswordBox_Password.Password);
+            Users user = Emelyanenko_AdManagementEntities.GetInstance().Users.FirstOrDefault(entry => entry.User_Login == TextBox_Login.Text && entry.User_Password == PasswordBox_Password.Password);
 
             if (user == null)
             {
